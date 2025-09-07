@@ -1,0 +1,14 @@
+from pyrogram import Client, filters
+
+app = Client(
+    "test_bot",
+    api_id=20873866,  # your API_ID
+    api_hash="235d8287c8d1286d354536e3d587a84a",  # your API_HASH
+    bot_token="8499248970:AAE0SDZ4K2QwLYKncgmrC0Zt2xaNIx8NNvo"  # your new bot token
+)
+
+@app.on_message(filters.command("ping"))
+async def ping(_, message):
+    await message.reply("Pong ✅ Bot is working!")
+
+app.run()
